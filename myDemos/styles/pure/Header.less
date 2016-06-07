@@ -1,0 +1,29 @@
+@height-header:3rem;
+@color-header:#fff;
+@bgColor-header:#000;
+
+
+@import "mixins";
+
+.personal-header{
+   height: @height-header;
+   width: 100%;
+   line-height: @height-header;
+   text-align: center;
+   color: @color-header;
+   background-color: @bgColor-header;
+   position: fixed;
+  top:0;
+  left:0;
+
+  p{
+    width: 70%;
+    float: left;
+    line-height: @height-header;
+  }
+  span{
+    width: 15%;
+    height:100%;
+    float: left;
+  }
+}

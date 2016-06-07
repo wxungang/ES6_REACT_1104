@@ -1,0 +1,33 @@
+/*
+组件内部变量  */
+/* 页面的基本样式常量 */
+html,
+body,
+p {
+  padding: 0;
+  margin: 0;
+}
+html,
+body {
+  font-size: 10px;
+}
+body {
+  background-color: #eee;
+}
+body img {
+  width: 100%;
+}
+a,
+ul,
+li {
+  width: 100%;
+  text-decoration: none;
+}
+.personal-lists {
+  width: 100%;
+  line-height: 2.5rem;
+}
+.personal-lists li {
+  height: 2.5rem;
+  width: 100%;
+}
