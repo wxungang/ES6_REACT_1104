@@ -4,7 +4,6 @@ var webpack = require('webpack');
 module.exports = {
     devtool: 'cheap-module-eval-source-map',
     entry: [
-        'webpack/hot/dev-server',
         'webpack-hot-middleware/client',
         './myDemos/test/app.jsx'
     ],
@@ -21,13 +20,16 @@ module.exports = {
     ],
     module: {
         loaders: [
-            { test: /\.jsx?$/, loaders: ['babel'], include: [
+            { test: /\.jsx?$/, loaders: ['babel','babel-loader'], include: [
                 path.resolve(__dirname, 'myDemos')
-            ] },
+            ] ,exclude: /node_modules/},
             { test: /\.(css|less)$/, loader: 'style-loader!css-loader?localIdentName=[hash:base64:8]!less-loader' },
             { test: /\.(ttf|eot|woff|woff2|otf|svg)/, loader: 'file-loader?name=./font/[name].[ext]' },
             { test: /\.json$/, loader: 'file-loader?name=./json/[name].json' },
             { test: /\.(png|jpg|jpeg|gif)$/, loader: 'url-loader?limit=10000&name=./images/[name].[ext]' }
         ]
+    },
+    resolve: {
+        extensions: ['', '.js', '.json', '.jsx']
     }
 };

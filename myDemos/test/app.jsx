@@ -5,16 +5,15 @@
 import ReactDOM from 'react-dom';
 // import list from "../components/Lists";
 // import tap from "../components/Tap";
-import pHeader from "../components/Header.js";
+import pHeader from "../components/Header";
 // var pHeader=require("../components/Header.js");
-// import test from "../components/test";
-// var _H1Component=require("../components/test");
-console.log(pHeader);
+import test from "../components/test";
+console.log(test);
 
 ReactDOM.render(
   <div>
-    <pHeader className="myLists" title="header">
-    </pHeader>
+    <test className="myLists" title="header">
+    </test>
   </div>,
   document.getElementById('body')
 );

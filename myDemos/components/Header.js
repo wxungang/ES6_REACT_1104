@@ -12,6 +12,7 @@ class Header extends Component {
   constructor(props) {
     console.log(props);
     super(props);
+    this.state={};
   }
 
   static defaultProps = {
@@ -29,8 +30,7 @@ class Header extends Component {
     );
     return (
       <div className={classNames}>
-        <span className="personal-header-home"> </span><p>{this.props.title}</p> <span
-        className="personal-header-setting"> </span>
+        <span className="personal-header-home"> </span><p>{this.props.title}</p> <span className="personal-header-setting"> </span>
       </div>
     )
   };

@@ -1,9 +1,19 @@
+/**
+ * Created by xiaogang on 2016/6/8.
+ */
 "use strict";
-var H1Component=React.createClass({
-  render:function(){
-    return <h1> hi {this.props.name } world !</h1>
-  }
-});
+import {Component, PropTypes} from 'react';
+
+export default class Test extends Component{
+    constructor(props){
+        super(props);
+        this.state={};
+    }
+
+    render(){
+        return <div>test {this.props.name }</div>
+    }
 
 
-module.exports=H1Component;
+
+}
