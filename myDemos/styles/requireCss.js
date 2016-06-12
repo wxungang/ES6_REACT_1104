@@ -3,7 +3,7 @@
  * 功能：集中管理样式文件的加载问题
  */
 "use strict";
-export let pre="pure";
+let pre="pure";
 
 export function requireCss(pack) {
   require(`./${pre}/${pack}.less`);

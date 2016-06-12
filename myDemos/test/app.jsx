@@ -3,17 +3,22 @@
  */
 "use strict";
 import ReactDOM from 'react-dom';
-// import list from "../components/Lists";
-// import tap from "../components/Tap";
-import pHeader from "../components/Header";
-// var pHeader=require("../components/Header.js");
-import test from "../components/test";
-console.log(test);
+
+/**
+ * 定义全局的 加载组件函数
+ * @param src
+ * @returns {*}
+ */
+// global.uiRequire = function (src) {
+//     if (src) {
+//         return require('../components/' + src);
+//     } else {
+//         return require('../components/');
+//     }
+// };
+const AppRoutes = require('./routes.jsx');
 
 ReactDOM.render(
-  <div>
-    <test className="myLists" title="header">
-    </test>
-  </div>,
+    AppRoutes,
   document.getElementById('body')
 );

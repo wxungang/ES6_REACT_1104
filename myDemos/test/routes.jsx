@@ -4,13 +4,15 @@
 "use strict";
 
 import { browserHistory, Router, Route, Link, Redirect } from 'react-router'
+import Index from '../pages/index';
+import Home from '../pages/home';
 
 
-
-const appRoutes=(
+const AppRoutes=(
   <Router history={browserHistory}>
-    <Route path="/" indexRoute={{component: Home}} component={Master}>
-
+    <Route path="/" indexRoute={{component: Home}} component={Index}>
+        <Route path="/home" component={Home}/>
     </Route>
   </Router>
 );
+module.exports = AppRoutes;
