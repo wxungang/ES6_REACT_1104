@@ -16,10 +16,10 @@ export default class Lists extends Component {
     super(props);
   }
 
-  // static defaultProps = {};
-  // static propTypes = {
-  //   listsArr: React.PropTypes.array
-  // };
+  static defaultProps = {};
+  static propTypes = {
+    listsArr: PropTypes.array
+  };
 
   render() {
     const classNames = setClassName(
