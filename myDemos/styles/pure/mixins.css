@@ -7,7 +7,7 @@ p {
 }
 html,
 body {
-  font-size: 10px;
+  font-size: 20px;
 }
 body {
   background-color: #eee;
@@ -20,4 +20,11 @@ ul,
 li {
   width: 100%;
   text-decoration: none;
+}
+/*基本常用类*/
+.right {
+  float: right;
+}
+.left {
+  float: left;
 }

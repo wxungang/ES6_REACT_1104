@@ -9,7 +9,7 @@ p {
 }
 html,
 body {
-  font-size: 10px;
+  font-size: 20px;
 }
 body {
   background-color: #eee;
@@ -23,11 +23,18 @@ li {
   width: 100%;
   text-decoration: none;
 }
+/*基本常用类*/
+.right {
+  float: right;
+}
+.left {
+  float: left;
+}
 .personal-lists {
   width: 100%;
-  line-height: 2.5rem;
+  line-height: 1.5rem;
 }
 .personal-lists li {
-  height: 2.5rem;
+  height: 1.5rem;
   width: 100%;
 }

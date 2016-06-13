@@ -4,15 +4,8 @@
 "use strict";
 import {Component, PropTypes} from 'react';
 import {requireCss,setClassName} from '../components/mixins';
-import pageLists from './pageLists.jsx';
-
-// let pageLists=[];
-
-function addLists(listItem) {
-    
-}
-
-require('./pageLists').map((list,index)=>addLists(list,index));
+import List from '../components/List';
+import pageLists from './pageLists.js';
 
 export default class PageHome extends Component{
     constructor(props){
@@ -35,16 +28,13 @@ export default class PageHome extends Component{
      * @param index
      */
     addLists(list,index){
-
+        return  <List key={index} path={list.path} listObj={{key:list.text}} />
     }
 
     render(){
-        let uiLists=pageLists.map((list,index)=>addLists(list,index))
+        let uiLists=pageLists.map((list,index)=><List key={index} path={list.path} listObj={{key:list.text}} />);
 
-        return <div>home</div>
-
-
-
+        return <div className="personal-home">{uiLists}</div>
     }
 
 

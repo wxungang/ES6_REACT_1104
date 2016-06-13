@@ -1,0 +1,19 @@
+/*
+组件内部变量  */
+@height-list:2rem;
+@bgColor-list:#fff;
+
+@import "mixins";
+
+/*.personal-list*/
+.personal-list{
+   height: @height-list;
+  line-height: @height-list;
+  background-color: @bgColor-list;
+  padding: 0 6%;
+  .p-list-key{
+      width: 80%;
+      height: 100%;
+      float: left;
+  }
+}
