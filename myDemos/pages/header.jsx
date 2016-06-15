@@ -24,3 +24,4 @@ export default class PageHeader extends Component {
         return <div>header</div>
     }
 }
+module.exports = PageHeader;

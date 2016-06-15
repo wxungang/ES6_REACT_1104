@@ -3,29 +3,18 @@
  */
 "use strict";
 
-import { browserHistory, Router, Route, Link, Redirect } from 'react-router'
+import { Router, Route, IndexRoute, Link, hashHistory } from 'react-router'
 import Index from '../pages/index';
 import Home from '../pages/home';
 
-
-let menulist = [];
-
-function addMenu(list,index) {
-    if (list.component) {
-        menulist.push(
-            <Route key={index} path={list.path} component={list.component} />
-        );
-    }
-}
-require('../pages/pageLists').forEach(function (list,index) {
-    addMenu(list);
-});
+const menuLists=require('../pages/pageLists').map((list,index)=>(list.component? <Route key={index} path={list.path} component={list.component} />:"")) ;
 
 const AppRoutes=(
-  <Router history={browserHistory}>
-    <Route path="/" indexRoute={{component: Home}} component={Index}>
+    <Router history={hashHistory}>
+    <Route path="/" component={Index}>
+        <IndexRoute component={Home}/>
         <Route path="/home" component={Home}/>
-        {menulist}
+        {menuLists}
     </Route>
   </Router>
 );

@@ -21,7 +21,9 @@ export default class PageHome extends Component{
     static propTypes={
 
     };
-
+    onClick(){
+         console.log(1);
+    };
     /**
      * 生成 配置项展示 列表
      * @param list
@@ -32,7 +34,7 @@ export default class PageHome extends Component{
     }
 
     render(){
-        let uiLists=pageLists.map((list,index)=><List key={index} path={list.path} listObj={{key:list.text}} />);
+        let uiLists=pageLists.map((list,index)=><List key={index} path={list.path} listObj={{key:list.text}} onClick={this.onClick} />);
 
         return <div className="personal-home">{uiLists}</div>
     }

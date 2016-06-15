@@ -29,9 +29,9 @@ li {
   float: left;
 }
 .personal-header {
-  height: 3rem;
+  height: 2.5rem;
   width: 100%;
-  line-height: 3rem;
+  line-height: 2.5rem;
   text-align: center;
   color: #fff;
   background-color: #000;
@@ -42,7 +42,7 @@ li {
 .personal-header p {
   width: 70%;
   float: left;
-  line-height: 3rem;
+  line-height: 2.5rem;
 }
 .personal-header span {
   width: 15%;

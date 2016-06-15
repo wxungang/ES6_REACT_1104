@@ -24,3 +24,5 @@ export default class PageTap extends Component {
         return <div>tap</div>
     }
 }
+//给require 调用的
+module.exports=PageTap;

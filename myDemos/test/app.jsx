@@ -3,7 +3,7 @@
  */
 "use strict";
 import ReactDOM from 'react-dom';
-
+require('./css/page.less');
 /**
  * 定义全局的 加载组件函数
  * @param src
