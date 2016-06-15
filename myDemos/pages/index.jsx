@@ -6,7 +6,7 @@ import {Component, PropTypes} from 'react';
 import {requireCss,setClassName} from '../components/mixins';
 import Head from '../components/Header';
 
-require('./page.less');
+require('./css/page.less');
 
 let prefix='index';
 // requireCss();
