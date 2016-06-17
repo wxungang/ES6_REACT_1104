@@ -16,10 +16,24 @@ export default class List extends Component {
         super(props);
     }
 
-    static defaultProps = {};
+    static defaultProps = {
+
+    };
     static propTypes = {
 
     };
+    clickHandler(path){
+        console.log(path||"click handler");
+        console.log(arguments);
+        console.log(this.props.path);
+
+        path&&(window.location.hash=path);
+
+        // this.context.history.pushState(null, path);
+        // if (!this.context.history.isActive(path)) {
+        //     this.context.history.pushState(null, path);
+        // }
+    }
 
     render() {
         const classNames = setClassName(
@@ -27,9 +41,9 @@ export default class List extends Component {
             this.props.className
         );
         let _listObj = this.props.listObj;
-        console.log(classNames);
+        let _path=this.props.path;
         return (
-            <div className={classNames}>
+            <div className={classNames} onClick={this.clickHandler.bind(this,_path)}>
               <p className="p-list-key">{_listObj.key}</p><span className="iconfont icon-unie6a3 right"></span>
             </div>
         );

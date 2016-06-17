@@ -3,7 +3,11 @@
  */
 "use strict";
 
-import { Router, Route, IndexRoute, Link, hashHistory } from 'react-router'
+import { Router, Route, IndexRoute, hashHistory } from 'react-router'
+//
+import createHistory from 'history/lib/createHashHistory';
+const history = createHistory({ queryKey: false });
+
 import Index from '../pages/index';
 import Home from '../pages/home';
 

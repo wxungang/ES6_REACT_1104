@@ -22,9 +22,3 @@ ReactDOM.render(
   document.getElementById('body')
 );
 
-// import MyComponent from '../components/List';
-// ReactDOM.render(
-//     <MyComponent listObj={{key:"中国银联"}}> </MyComponent>,
-//     document.getElementById('body')
-// );
-

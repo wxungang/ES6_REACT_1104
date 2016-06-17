@@ -36,6 +36,7 @@
     "express": "^4.13.4",
     "extend": "^3.0.0",
     "file-loader": "^0.8.5",
+    "history": "^2.0.0",
     "json-loader": "^0.5.4",
     "less": "^2.5.1",
     "less-loader": "^2.2.0",

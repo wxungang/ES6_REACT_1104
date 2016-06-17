@@ -1,16 +1,25 @@
 var path = require('path');
 var webpack = require('webpack');
+var fs=require('fs');
+
+var entryPath='./myDemos/webPage/jsx';
+var entris = fs.readdirSync(entryPath).reduce(function (o, filename) {
+        !/\./.test(filename) &&
+        (o[filename] = './' + path.join(entryPath, filename, filename + '.jsx'));
+        return o;
+    }, {}
+);
+console.log(entris);
 
 module.exports = {
     devtool: 'cheap-module-eval-source-map',
-    entry: [
-        'webpack-hot-middleware/client',
-        './myDemos/test/app.jsx'
-    ],
+    entry: {
+        "app":"./myDemos/test/app.jsx",
+        "index":"./myDemos/webPage/index.jsx"
+    },
     output: {
-        path: path.join(__dirname, 'myDemos'),
-        filename: 'build/index.js',
-        publicPath: '/'
+        path: __dirname + "/myDemos/build",
+        filename: "[name].bundle.js"
     },
     externals: {'react': 'React', 'react-dom': 'ReactDOM'},
     plugins: [
