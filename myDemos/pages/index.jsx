@@ -28,14 +28,12 @@ export default class PageIndex extends Component{
     render(){
         return (
             <div className="personal-1104">
-                <Head title="index" />
-                <div className="personal-main">
-                    {this.props.children}
+                <Head title="index" ref="header"/>
+                <div className="personal-main" >
+                    { this.props.children }
                 </div>
             </div>
         );
-
-
     }
 }
 

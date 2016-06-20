@@ -22,7 +22,7 @@ export default class PageHome extends Component{
 
     };
     pathChange (path) {
-        console.log(path);
+        console.log(333333333);
         if (!this.context.history.isActive(path)) {
             this.context.history.pushState(null, path);
         }

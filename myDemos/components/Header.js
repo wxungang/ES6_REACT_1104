@@ -16,7 +16,9 @@ class Header extends Component {
     }
 
     static defaultProps = {
-        title: "首页"
+        title: "首页",
+        setObj:{},
+        homeObj:{}
     };
 
     static propTypes = {
@@ -39,6 +41,8 @@ class Header extends Component {
     }
 
     render() {
+        //数据预处理[  defaultProps 中可以做一些基本的预处理 ]
+
         //header 相关的类和事件
         const _classNames = setClassName(
             "personal-header",

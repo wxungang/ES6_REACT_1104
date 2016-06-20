@@ -4,5 +4,6 @@
 "use strict";
 module.exports=[
   {path:"/header",text:"header",component:require("./header.jsx")},
-  {path:"/tap",text:"tap",component:require("./tap")}
+  {path:"/tap",text:"tap",component:require("./tap")},
+  {path:"/list",text:"list",component:require("./list")}
 ];
