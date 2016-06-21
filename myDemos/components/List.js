@@ -27,7 +27,7 @@ export default class List extends Component {
         //跳转
         (this.props.path)&&(window.location.hash=this.props.path);
         //父级回调
-        this.props.setTitle(this.props.path);
+        this.props.setTitle(this.props.listObj.key);
     }
 
     render() {
