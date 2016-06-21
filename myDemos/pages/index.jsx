@@ -3,39 +3,39 @@
  */
 "use strict";
 import {Component, PropTypes} from 'react';
-import {requireCss,setClassName} from '../components/mixins';
+import {requireCss, setClassName} from '../components/mixins';
 import Head from '../components/Header';
 
 require('./css/page.less');
 
-let prefix='index';
+let prefix = 'index';
 // requireCss();
 
-export default class PageIndex extends Component{
-    constructor(props){
+export default class PageIndex extends Component {
+    constructor(props) {
         super(props);
-        this.state={
-            title:"index"
+        this.state = {
+            title: "index"
         };
     }
-    static defaultProps={
 
-    };
-    static propTypes={
-        children:PropTypes.any
+    static defaultProps = {};
+    static propTypes = {
+        children: PropTypes.any
     };
 
-    setTitle=(path)=>{
+    setTitle = (path)=> {
         console.log(path);
         this.setState({
-            title:path||"index"
+            title: path || "index"
         });
     };
-    render(){
+
+    render() {
         return (
             <div className="personal-1104">
                 <Head title={this.state.title} ref="header"/>
-                <div className="personal-main" setHeader={this.setTitle} >
+                <div className="personal-main">
                     {this.props.children && React.cloneElement(this.props.children, {
                         setTitle: this.setTitle
                     })}

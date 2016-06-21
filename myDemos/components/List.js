@@ -17,17 +17,25 @@ export default class List extends Component {
     }
 
     static defaultProps = {
-
+        path:"/home",
+        listObj:{
+            key:"list demo"
+        },
+        parentClick:function () {
+            
+        }
     };
     static propTypes = {
-
+        path:PropTypes.string,
+        listObj:PropTypes.object,
+        parentClick:PropTypes.func
     };
     clickHandler(){
         console.log(arguments);
         //跳转
         (this.props.path)&&(window.location.hash=this.props.path);
         //父级回调
-        this.props.setTitle(this.props.listObj.key);
+        this.props.parentClick(this.props.listObj.key);
     }
 
     render() {

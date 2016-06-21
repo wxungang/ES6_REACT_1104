@@ -6,22 +6,22 @@
 import {Component, PropTypes} from 'react';
 import {requireCss, setClassName} from '../components/mixins';
 
+import List from '../components/List';
+
 export default class PageList extends Component {
     constructor(props) {
         super(props);
         this.state = {};
     }
 
-    static defaultProps={
+    static defaultProps = {};
 
-    };
+    static propTypes = {};
 
-    static propTypes={
-
-    };
-
-    render(){
-        return <div>list</div>
+    render() {
+        return <div className="personal-page">
+             <List />
+        </div>
     }
 }
 module.exports = PageList;

@@ -37,7 +37,7 @@ export default class PageHome extends Component{
     }
 
     render(){
-        let uiLists=pageLists.map((list,index)=><List key={index} path={list.path} listObj={{key:list.text}} setTitle={this.props.setTitle}/>);
+        let uiLists=pageLists.map((list,index)=><List key={index} path={list.path} listObj={{key:list.text}} parentClick={this.props.setTitle}/>);
 
         return <div className="personal-home">{uiLists}</div>
     }
