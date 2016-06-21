@@ -15,7 +15,7 @@ export default class PageIndex extends Component{
     constructor(props){
         super(props);
         this.state={
-
+            title:"index"
         };
     }
     static defaultProps={
@@ -24,12 +24,16 @@ export default class PageIndex extends Component{
     static propTypes={
         children:PropTypes.any
     };
-
+    setTitle(path){
+        this.setState({
+            title:path||"index"
+        });
+    }
     render(){
         return (
             <div className="personal-1104">
-                <Head title="index" ref="header"/>
-                <div className="personal-main" >
+                <Head title={this.state.title} ref="header"/>
+                <div className="personal-main" setHeader={this.setTitle} >
                     { this.props.children }
                 </div>
             </div>

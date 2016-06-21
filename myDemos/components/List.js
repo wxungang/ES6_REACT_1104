@@ -23,18 +23,13 @@ export default class List extends Component {
 
     };
     clickHandler(){
-        console.log(this);
         console.log(arguments);
-        console.log(this.props.path);
+        (this.props.path)&&(window.location.hash=this.props.path);
 
-        path&&(window.location.hash=path);
+        // console.log(this.refs.header);
 
-        console.log(this.refs.header);
+        this.props._click(222222);
 
-        // this.context.history.pushState(null, path);
-        // if (!this.context.history.isActive(path)) {
-        //     this.context.history.pushState(null, path);
-        // }
     }
 
     render() {
@@ -45,7 +40,7 @@ export default class List extends Component {
         let _listObj = this.props.listObj;
         // let _path=this.props.path;
         return (
-            <div className={classNames} onClick={this.clickHandler}>
+            <div className={classNames} onClick={this.clickHandler.bind(this)}>
               <p className="p-list-key">{_listObj.key}</p><span className="iconfont icon-unie6a3 right"></span>
             </div>
         );

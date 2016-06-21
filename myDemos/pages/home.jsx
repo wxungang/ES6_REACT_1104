@@ -22,10 +22,7 @@ export default class PageHome extends Component{
 
     };
     pathChange (path) {
-        console.log(333333333);
-        if (!this.context.history.isActive(path)) {
-            this.context.history.pushState(null, path);
-        }
+        console.log(path||333333333);
     }
     /**
      * 生成 配置项展示 列表
@@ -37,7 +34,7 @@ export default class PageHome extends Component{
     }
 
     render(){
-        let uiLists=pageLists.map((list,index)=><List key={index} path={list.path} listObj={{key:list.text}} onClick={this.pathChange.bind(this,list.path)}/>);
+        let uiLists=pageLists.map((list,index)=><List key={index} path={list.path} listObj={{key:list.text}} _click={this.pathChange}/>);
 
         return <div className="personal-home">{uiLists}</div>
     }
