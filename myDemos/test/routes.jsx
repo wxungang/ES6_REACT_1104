@@ -15,7 +15,7 @@ const menuLists=require('../pages/pageLists').map((list,index)=>(list.component?
 
 const AppRoutes=(
     <Router history={hashHistory}>
-    <Route path="/" component={Index}>
+    <Route path="/" component={Index} >
         <IndexRoute component={Home}/>
         <Route path="/home" component={Home}/>
         {menuLists}

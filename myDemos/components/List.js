@@ -24,12 +24,10 @@ export default class List extends Component {
     };
     clickHandler(){
         console.log(arguments);
+        //跳转
         (this.props.path)&&(window.location.hash=this.props.path);
-
-        // console.log(this.refs.header);
-
-        this.props._click(222222);
-
+        //父级回调
+        this.props.setTitle(this.props.path);
     }
 
     render() {
