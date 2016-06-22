@@ -21,6 +21,7 @@ export default class PageList extends Component {
     render() {
         return <div className="personal-page">
              <List />
+             <List  listObj={{key:"list",val:"value"}}/>
         </div>
     }
 }

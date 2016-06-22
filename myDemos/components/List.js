@@ -47,7 +47,7 @@ export default class List extends Component {
         // let _path=this.props.path;
         return (
             <div className={classNames} onClick={this.clickHandler.bind(this)}>
-              <p className="p-list-key">{_listObj.key}</p><span className="iconfont icon-unie6a3 right"></span>
+              <p className="p-list-key">{_listObj.key}</p><span className="iconfont icon-unie6a3 right"></span>{_listObj.val?<span class="right p-list-val">_listObj.val</span>:""}
             </div>
         );
     }
