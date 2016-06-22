@@ -20,9 +20,10 @@ export default class PageList extends Component {
 
     render() {
         return <div className="personal-page">
-             <List />
-             <List  listObj={{key:"list",val:"value"}}/>
-            <List  listObj={{key:"input",val:"value"}} type="5"/>
+            <List />
+            <List listObj={{key:"list",val:"list value"}}/>
+            <List listObj={{key:"list",val:"without iconFont"}} iconFont=""/>
+            <List listObj={{key:"input",val:"value"}} type="5"/>
         </div>
     }
 }

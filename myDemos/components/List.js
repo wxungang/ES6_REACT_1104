@@ -19,8 +19,9 @@ export default class List extends Component {
     static defaultProps = {
         path: "/home",
         listObj: {
-            key: "list demo"
+            key: "list default"
         },
+        iconFont:"icon-unie6a3",
         parentClick: function () {
 
         }
@@ -40,19 +41,16 @@ export default class List extends Component {
     }
 
     render() {
+        let _listObj=this.props.listObj;
         const classNames = setClassName(
             "personal-list",
             this.props.className
         );
-        const iconfont=setClassName(
-            "iconfont icon-unie6a3 right"
+        const iconFont=setClassName(
+            "iconfont right",
+            this.props.iconFont
         );
-        let _listObj = this.props.listObj;
-        let _type = this.props.type;
-        let _listDom=<div className={classNames} onClick={this.clickHandler.bind(this)}>
-            <p className="p-list-key">{_listObj.key}</p><span className="iconfont icon-unie6a3 right"> </span>{_listObj.val ?
-            <span className="right p-list-val">{_listObj.val}</span> : ""}
-        </div>;
+        console.log(_listObj.iconFont);
         let listDom=((_listObj,_type)=>{
             if(_type){
                 return <div className={classNames}>
@@ -60,7 +58,7 @@ export default class List extends Component {
                 </div>;
             }else {
                 return <div className={classNames} onClick={this.clickHandler.bind(this)}>
-                    <p className="p-list-key">{_listObj.key}</p>{_listObj.iconfont==="no"?"":<span className={iconfont}> </span>}{_listObj.val ?
+                    <p className="p-list-key">{_listObj.key}</p>{this.props.iconFont?<span className={iconFont}> </span>:""}{_listObj.val ?
                     <span className="right p-list-val">{_listObj.val}</span> : ""}
                 </div>;
             }
