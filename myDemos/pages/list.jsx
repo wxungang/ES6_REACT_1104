@@ -14,9 +14,13 @@ export default class PageList extends Component {
         this.state = {};
     }
 
-    static defaultProps = {};
+    static defaultProps = {
+        
+    };
 
-    static propTypes = {};
+    static propTypes = {
+
+    };
 
     render() {
         return <div className="personal-page">
