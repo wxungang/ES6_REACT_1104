@@ -34,7 +34,7 @@ export default class PageIndex extends Component {
     render() {
         return (
             <div className="personal-1104">
-                <Head title={this.state.title} ref="header"/>
+                <Head title={this.state.title} iconFont="" ref="header"/>
                 <div className="personal-main">
                     {this.props.children && React.cloneElement(this.props.children, {
                         setTitle: this.setTitle

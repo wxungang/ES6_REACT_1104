@@ -17,6 +17,7 @@ class Header extends Component {
 
     static defaultProps = {
         title: "首页",
+        iconFont:"icon-unie679",
         setObj:{},
         homeObj:{}
     };
@@ -30,6 +31,8 @@ class Header extends Component {
         if(this.props.homeObj.handler) {
             console.log(arguments);
             this.props.homeObj.handler(params);
+        }else{
+            window.history.back();
         }
     }
     setHandler(params) {
@@ -49,8 +52,9 @@ class Header extends Component {
             this.props.className
         );
         const _homeClassName = setClassName(
-            "personal-header-home",
-            this.props.homeObj.classNames
+            "personal-header-home iconfont",
+            this.props.homeObj.classNames,
+            this.props.iconFont
         );
         const _setClassName = setClassName(
             "personal-header-setting",
