@@ -54,7 +54,7 @@ export default class List extends Component {
         let listDom=((_listObj,_type)=>{
             if(_type){
                 return <div className={classNames}>
-                    <p className="p-list-key">{_listObj.key}</p><input placeholder="please input your value"/>
+                    <p className="p-list-key">{_listObj.key}</p><input placeholder={_listObj.val} disabled={_listObj.disabled}/>
                 </div>;
             }else {
                 return <div className={classNames} onClick={this.clickHandler.bind(this)}>

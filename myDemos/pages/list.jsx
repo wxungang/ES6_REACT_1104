@@ -15,7 +15,7 @@ export default class PageList extends Component {
     }
 
     static defaultProps = {
-        
+
     };
 
     static propTypes = {
@@ -26,8 +26,10 @@ export default class PageList extends Component {
         return <div className="personal-page">
             <List />
             <List listObj={{key:"list",val:"list value"}}/>
+            <List listObj={{key:"list",val:"icon-untitled46"}} iconFont="icon-untitled46"/>
             <List listObj={{key:"list",val:"without iconFont"}} iconFont=""/>
             <List listObj={{key:"input",val:"value"}} type="5"/>
+            <List listObj={{key:"input",val:"disabled input",disabled:true}} type="5"/>
         </div>
     }
 }
