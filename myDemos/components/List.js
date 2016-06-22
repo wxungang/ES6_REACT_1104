@@ -17,23 +17,24 @@ export default class List extends Component {
     }
 
     static defaultProps = {
-        path:"/home",
-        listObj:{
-            key:"list demo"
+        path: "/home",
+        listObj: {
+            key: "list demo"
         },
-        parentClick:function () {
-            
+        parentClick: function () {
+
         }
     };
     static propTypes = {
-        path:PropTypes.string,
-        listObj:PropTypes.object,
-        parentClick:PropTypes.func
+        path: PropTypes.string,
+        listObj: PropTypes.object,
+        parentClick: PropTypes.func
     };
-    clickHandler(){
+
+    clickHandler() {
         console.log(arguments);
         //跳转
-        (this.props.path)&&(window.location.hash=this.props.path);
+        (this.props.path) && (window.location.hash = this.props.path);
         //父级回调
         this.props.parentClick(this.props.listObj.key);
     }
@@ -43,12 +44,30 @@ export default class List extends Component {
             "personal-list",
             this.props.className
         );
+        const iconfont=setClassName(
+            "iconfont icon-unie6a3 right"
+        );
         let _listObj = this.props.listObj;
-        // let _path=this.props.path;
+        let _type = this.props.type;
+        let _listDom=<div className={classNames} onClick={this.clickHandler.bind(this)}>
+            <p className="p-list-key">{_listObj.key}</p><span className="iconfont icon-unie6a3 right"> </span>{_listObj.val ?
+            <span className="right p-list-val">{_listObj.val}</span> : ""}
+        </div>;
+        let listDom=((_listObj,_type)=>{
+            if(_type){
+                return <div className={classNames}>
+                    <p className="p-list-key">{_listObj.key}</p><input placeholder="please input your value"/>
+                </div>;
+            }else {
+                return <div className={classNames} onClick={this.clickHandler.bind(this)}>
+                    <p className="p-list-key">{_listObj.key}</p>{_listObj.iconfont==="no"?"":<span className={iconfont}> </span>}{_listObj.val ?
+                    <span className="right p-list-val">{_listObj.val}</span> : ""}
+                </div>;
+            }
+        })(this.props.listObj,this.props.type);
+
         return (
-            <div className={classNames} onClick={this.clickHandler.bind(this)}>
-              <p className="p-list-key">{_listObj.key}</p><span className="iconfont icon-unie6a3 right"></span>{_listObj.val?<span class="right p-list-val">_listObj.val</span>:""}
-            </div>
+            listDom
         );
     }
 }
