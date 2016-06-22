@@ -65,7 +65,18 @@ export default class List extends Component {
         })(this.props.listObj,this.props.type);
 
         return (
-            listDom
+            ((_listObj,_type)=>{
+                if(_type){
+                    return <div className={classNames}>
+                        <p className="p-list-key">{_listObj.key}</p><input placeholder={_listObj.val} disabled={_listObj.disabled}/>
+                    </div>;
+                }else {
+                    return <div className={classNames} onClick={this.clickHandler.bind(this)}>
+                        <p className="p-list-key">{_listObj.key}</p>{this.props.iconFont?<span className={iconFont}> </span>:""}{_listObj.val ?
+                        <span className="right p-list-val">{_listObj.val}</span> : ""}
+                    </div>;
+                }
+            })(this.props.listObj,this.props.type)
         );
     }
 }
