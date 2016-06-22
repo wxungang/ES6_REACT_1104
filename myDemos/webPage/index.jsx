@@ -3,12 +3,11 @@
  */
 "use strict";
 import ReactDOM from 'react-dom';
-import IndexPage from './jsx/index';
 
 
 
 ReactDOM.render(
-    <IndexPage />,
+    <div> webPage </div>,
     document.getElementById("body")
 );
 
