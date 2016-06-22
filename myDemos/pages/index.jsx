@@ -15,26 +15,30 @@ export default class PageIndex extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            title: "index"
+            title: "index",
+            iconFont:"icon-unie679"
         };
     }
 
-    static defaultProps = {};
+    static defaultProps = {
+        iconFont:"icon-unie679"
+    };
     static propTypes = {
         children: PropTypes.any
     };
 
-    setTitle = (path)=> {
+    setTitle = (path,iconFont)=> {
         console.log(path);
         this.setState({
-            title: path || "index"
+            title: path || "index",
+            iconFont:iconFont===""?"iconfont":this.props.iconFont
         });
     };
 
     render() {
         return (
             <div className="personal-1104">
-                <Head title={this.state.title} iconFont="" ref="header"/>
+                <Head title={this.state.title} iconFont={this.state.iconFont} ref="header"/>
                 <div className="personal-main">
                     {this.props.children && React.cloneElement(this.props.children, {
                         setTitle: this.setTitle

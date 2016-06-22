@@ -32,7 +32,9 @@ class Header extends Component {
             console.log(arguments);
             this.props.homeObj.handler(params);
         }else{
-            window.history.back();
+            if(this.props.iconFont==="icon-unie679"){
+                window.history.back();
+            }
         }
     }
     setHandler(params) {

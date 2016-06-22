@@ -12,19 +12,21 @@ export default class PageHome extends Component{
         console.log(props);
         super(props);
         this.state={
-            title:"home"
+            title:"home",
+            iconFont:""
         };
     }
 
     static defaultProps={
-
+        title:"home",
+        iconFont:""
     };
     static propTypes={
 
     };
 
     componentWillMount(){
-        this.props.setTitle(this.state.title);
+        this.props.setTitle(this.props.title,this.props.iconFont);
     };
 
     /**
