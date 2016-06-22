@@ -17,29 +17,33 @@ class Header extends Component {
 
     static defaultProps = {
         title: "首页",
-        iconFont:"icon-unie679",
-        setObj:{},
-        homeObj:{}
+        iconFont: "icon-unie679",
+        setObj: {},
+        homeObj: {}
     };
 
     static propTypes = {
-        title: PropTypes.string
+        title: PropTypes.string,
+        iconFont:PropTypes.string,
+        setObj:PropTypes.object,
+        homeObj:PropTypes.object
     };
 
     homeHandler(params) {
         console.log("header homeHandler");
-        if(this.props.homeObj.handler) {
+        if (this.props.homeObj.handler) {
             console.log(arguments);
             this.props.homeObj.handler(params);
-        }else{
-            if(this.props.iconFont==="icon-unie679"){
+        } else {
+            if (this.props.iconFont === "icon-unie679") {
                 window.history.back();
             }
         }
     }
+
     setHandler(params) {
         console.log("header setHandler");
-        if(this.props.setObj.handler){
+        if (this.props.setObj.handler) {
             console.log(arguments);
             this.props.setObj.handler(params)
         }
@@ -62,12 +66,14 @@ class Header extends Component {
             "personal-header-setting",
             this.props.setObj.classNames
         );
+        //@formatter:off
         return (
             <div className={_classNames}>
                 <span className={_homeClassName} onClick={this.homeHandler.bind(this,this.props.homeObj.params)}> </span>
                 <p>{this.props.title}</p> <span className={_setClassName} onClick={this.setHandler.bind(this,this.props.setObj.params)}> </span>
             </div>
         )
+       //@formatter:on
     };
 }
 module.exports = Header;

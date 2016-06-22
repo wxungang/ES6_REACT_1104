@@ -12,16 +12,16 @@ export default class PageButton extends Component {
         this.state = {};
     }
 
-    static defaultProps={
-    };
+    static defaultProps = {};
 
-    static propTypes={
+    static propTypes = {};
 
-    };
-
-    render(){
+    render() {
         return (
-            <Button/>
+            <div className="personal-page">
+                <Button />
+                <Button text="提交"/>
+            </div>
         )
     }
 }

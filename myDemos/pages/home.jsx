@@ -22,7 +22,8 @@ export default class PageHome extends Component{
         iconFont:""
     };
     static propTypes={
-
+        title:PropTypes.string,
+        iconFont:PropTypes.string
     };
 
     componentWillMount(){

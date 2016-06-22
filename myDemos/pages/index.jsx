@@ -24,7 +24,8 @@ export default class PageIndex extends Component {
         iconFont:"icon-unie679"
     };
     static propTypes = {
-        children: PropTypes.any
+        children: PropTypes.any,
+        iconFont:PropTypes.string
     };
 
     setTitle = (path,iconFont)=> {

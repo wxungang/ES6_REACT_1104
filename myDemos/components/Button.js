@@ -12,16 +12,29 @@ export default class Button extends Component {
     constructor(props) {
         super(props);
     }
+
     static defaultProps = {
-       text:"确定"
+        text: "确定",
+        clickHandler: function () {
+            alert(['you have clicked the ', this.text, ' button'].join(" "));
+        }
     };
+    static propTypes = {
+        text: PropTypes.string,
+        clickHandler:PropTypes.func
+    };
+
+    clickHandler() {
+        this.props.clickHandler();
+    };
+
     render() {
         const classNames = setClassName(
             "personal-button",
             this.props.className
         );
         return (
-            <div className={classNames}>
+            <div className={classNames} onClick={this.clickHandler.bind(this)}>
                 {this.props.text}
             </div>
         )

@@ -29,6 +29,7 @@ export default class List extends Component {
     static propTypes = {
         path: PropTypes.string,
         listObj: PropTypes.object,
+        iconFont:PropTypes.string,
         parentClick: PropTypes.func
     };
 
