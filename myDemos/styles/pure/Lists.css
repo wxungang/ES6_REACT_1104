@@ -23,6 +23,9 @@ li {
   width: 100%;
   text-decoration: none;
 }
+a:-webkit-any-link {
+  color: inherit;
+}
 input {
   outline: none;
   border: none;

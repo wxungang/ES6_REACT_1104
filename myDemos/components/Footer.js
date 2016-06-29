@@ -21,25 +21,30 @@ export default class Footer extends Component {
      * 设置默认的 props
      */
     static defaultProps = {
-        myProp: "personal"
     };
     /**
      * props 的类型校验
      */
     static propTypes = {
-        myProp: PropTypes.string
     };
 
-    clickHandler(){
+    clickHandler=(e)=>{
+        e.preventDefault();
         console.log("you have click footer tap");
         console.log(arguments);
-    }
+        console.log(e.target.attributes["key"]);
+        console.log(e.target.attributes["href"].value);
+    };
 
     render() {
         //临时变量和方法
         const classNames = setClassName(
             "personal-footer",
-            this.props.className
+            this.props.className,
+            this.props.type?"p-footer-lineHeight":""
+        );
+        const _iconFontClass=setClassName(
+            "iconfont "
         );
         // const _footerClass={
         //     lineHeight:inherit
@@ -47,17 +52,17 @@ export default class Footer extends Component {
         let _listArr=this.props.listArr;
         let _type=this.props.type;
 
-        // let _taps=;
+        let _iconFont= "icon-untitled93";
 
         return ((_listArr, _type)=> {
-              if(1){
-                  return <div className={classNames}>{
-                      _listArr.map((item,index)=><a key={index} className="p-footer-tap" href={item.link||"#"} onClick={this.clickHandler.bind(this)}>{item.text}</a>)
+              if(_type){
+                  return <div className={classNames} style={this.props.style}>{
+                      _listArr.map((item,index)=><a key={index}  className="p-footer-tap" href={item.link||"#"} onClick={this.clickHandler}><span className={_iconFontClass + item.iconFont||_iconFont}> </span><p>{item.text}</p></a>)
                   }
                   </div>
               }else {
                   return <div className={classNames}>{
-                      _listArr.map((item, index)=><a key={index} className="p-footer-tap" href={item.link}>{item.text}</a>)
+                      _listArr.map((item,index)=><a key={index}  className="p-footer-tap" href={item.link||"#"} onClick={this.clickHandler}>{item.text}</a>)
                   }
                   </div>
               }
