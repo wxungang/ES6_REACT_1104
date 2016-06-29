@@ -7,7 +7,7 @@ import {requireCss, setClassName} from "./mixins";
 let prefix = 'Header';
 requireCss("Header");
 
-class Header extends Component {
+export default class Header extends Component {
     //初始化 组件 属性和状态
     constructor(props) {
         console.log(props);
@@ -58,12 +58,12 @@ class Header extends Component {
             this.props.className
         );
         const _homeClassName = setClassName(
-            "personal-header-home iconfont",
+            "p-header-home iconfont",
             this.props.homeObj.classNames,
             this.props.iconFont
         );
         const _setClassName = setClassName(
-            "personal-header-setting",
+            "p-header-setting",
             this.props.setObj.classNames
         );
         //@formatter:off
@@ -72,7 +72,7 @@ class Header extends Component {
                 <span className={_homeClassName} onClick={this.homeHandler.bind(this,this.props.homeObj.params)}> </span>
                 <p>{this.props.title}</p> <span className={_setClassName} onClick={this.setHandler.bind(this,this.props.setObj.params)}> </span>
             </div>
-        )
+        );
        //@formatter:on
     };
 }

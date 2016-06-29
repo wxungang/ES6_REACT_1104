@@ -1,0 +1,31 @@
+@height-footer: 2.5rem;
+@color-footer: #fff;
+@bgColor-footer: #000;
+@icon-footer:1.4rem;
+
+@import "mixins";
+.personal-footer {
+  height: @height-footer;
+  width: 100%;
+  color: @color-footer;
+  background-color: @bgColor-footer;
+  line-height: @height-footer;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  a, .p-footer-tap {
+    float: left;
+    width: 25%;
+    display:inline-block;
+  }
+  .iconfont{
+     width: @icon-footer;
+     height: @icon-footer;
+     line-height: @icon-footer;
+     display: inline-block;
+  }
+  p{
+    line-height: 1rem;
+    font-size: 0.6rem;
+  }
+}
