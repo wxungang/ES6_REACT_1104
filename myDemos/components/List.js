@@ -24,22 +24,31 @@ export default class List extends Component {
         iconFont:"icon-unie6a3",
         parentClick: function () {
 
+        },
+        iconFunc:function () {
+            
         }
     };
     static propTypes = {
         path: PropTypes.string,
         listObj: PropTypes.object,
         iconFont:PropTypes.string,
-        parentClick: PropTypes.func
+        parentClick: PropTypes.func,
+        iconFunc: PropTypes.func
     };
-
-    clickHandler() {
+    iconFunc=(e)=>{
+        console.log(e);
+        e.stopPropagation();
+        console.log(arguments);
+        this.props.iconFunc();
+    };
+    clickHandler=()=> {
         console.log(arguments);
         //跳转
         (this.props.path) && (window.location.hash = this.props.path);
         //父级回调
         this.props.parentClick(this.props.listObj.key);
-    }
+    };
 
     render() {
         let _listObj=this.props.listObj;
@@ -52,19 +61,6 @@ export default class List extends Component {
             this.props.iconFont
         );
         console.log(_listObj.iconFont);
-        let listDom=((_listObj,_type)=>{
-            if(_type){
-                return <div className={classNames}>
-                    <p className="p-list-key">{_listObj.key}</p><input placeholder={_listObj.val} disabled={_listObj.disabled}/>
-                </div>;
-            }else {
-                return <div className={classNames} onClick={this.clickHandler.bind(this)}>
-                    <p className="p-list-key">{_listObj.key}</p>{this.props.iconFont?<span className={iconFont}> </span>:""}{_listObj.val ?
-                    <span className="right p-list-val">{_listObj.val}</span> : ""}
-                </div>;
-            }
-        })(this.props.listObj,this.props.type);
-
         return (
             ((_listObj,_type)=>{
                 if(_type){
@@ -73,7 +69,7 @@ export default class List extends Component {
                     </div>;
                 }else {
                     return <div className={classNames} onClick={this.clickHandler.bind(this)}>
-                        <p className="p-list-key">{_listObj.key}</p>{this.props.iconFont?<span className={iconFont}> </span>:""}{_listObj.val ?
+                        <p className="p-list-key">{_listObj.key}</p>{this.props.iconFont?<span className={iconFont} onClick={this.iconFunc}> </span>:""}{_listObj.val ?
                         <span className="right p-list-val">{_listObj.val}</span> : ""}
                     </div>;
                 }

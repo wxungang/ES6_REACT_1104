@@ -16,11 +16,15 @@ export default class PageButton extends Component {
 
     static propTypes = {};
 
+    clickHandler(){
+        alert("personal handler");
+    }
+
     render() {
         return (
             <div className="personal-page">
                 <Button />
-                <Button text="提交"/>
+                <Button text="提交" clickHandler={this.clickHandler}/>
             </div>
         )
     }
