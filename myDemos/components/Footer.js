@@ -33,7 +33,6 @@ export default class Footer extends Component {
         console.log("you have click footer tap");
         console.log(arguments);
         console.log(e.target.attributes["key"]);
-        console.log(e.target.attributes["href"].value);
     };
 
     render() {
@@ -51,13 +50,11 @@ export default class Footer extends Component {
         // };
         let _listArr=this.props.listArr;
         let _type=this.props.type;
-
-        let _iconFont= "icon-untitled93";
-
+        let _iconFont= "icon-unie913";//默认图标
         return ((_listArr, _type)=> {
               if(_type){
                   return <div className={classNames} style={this.props.style}>{
-                      _listArr.map((item,index)=><a key={index}  className="p-footer-tap" href={item.link||"#"} onClick={this.clickHandler}><span className={_iconFontClass + item.iconFont||_iconFont}> </span><p>{item.text}</p></a>)
+                      _listArr.map((item,index)=><a key={index}  className="p-footer-tap" href={item.link||"#"} onClick={this.clickHandler}><span className={_iconFontClass + (item.iconFont||_iconFont)}> </span><p>{item.text}</p></a>)
                   }
                   </div>
               }else {
