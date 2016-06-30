@@ -36,6 +36,9 @@ export default class Footer extends Component {
     };
 
     render() {
+        let _listArr=this.props.listArr;
+        let _type=this.props.type;
+        let _iconFont= "icon-unie913";//默认图标
         //临时变量和方法
         const classNames = setClassName(
             "personal-footer",
@@ -45,21 +48,19 @@ export default class Footer extends Component {
         const _iconFontClass=setClassName(
             "iconfont "
         );
-        // const _footerClass={
-        //     lineHeight:inherit
-        // };
-        let _listArr=this.props.listArr;
-        let _type=this.props.type;
-        let _iconFont= "icon-unie913";//默认图标
+        const _tapWidth={
+            width:(100/_listArr.length)+"%"
+        };
+        console.log(_tapWidth);
         return ((_listArr, _type)=> {
               if(_type){
                   return <div className={classNames} style={this.props.style}>{
-                      _listArr.map((item,index)=><a key={index}  className="p-footer-tap" href={item.link||"#"} onClick={this.clickHandler}><span className={_iconFontClass + (item.iconFont||_iconFont)}> </span><p>{item.text}</p></a>)
+                      _listArr.map((item,index)=><a key={index} style={_tapWidth} className="p-footer-tap" href={item.link||"#"} onClick={this.clickHandler}><span className={_iconFontClass + (item.iconFont||_iconFont)}> </span><p>{item.text}</p></a>)
                   }
                   </div>
               }else {
                   return <div className={classNames}>{
-                      _listArr.map((item,index)=><a key={index}  className="p-footer-tap" href={item.link||"#"} onClick={this.clickHandler}>{item.text}</a>)
+                      _listArr.map((item,index)=><a key={index} style={_tapWidth} className="p-footer-tap" href={item.link||"#"} onClick={this.clickHandler}>{item.text}</a>)
                   }
                   </div>
               }

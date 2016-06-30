@@ -46,9 +46,18 @@ input {
   line-height: 2.5rem;
   background-color: #666;
   text-align: center;
-  position: relative;
 }
-.personal-tap a {
+.personal-tap p {
   float: left;
-  width: 50%;
+  width: 25%;
+}
+.personal-tap p:after {
+  content: "";
+  width: 1px;
+  height: 1.6rem;
+  float: right;
+  background-color: #ccc;
+  top: 0.45rem;
+  left: 1px;
+  position: relative;
 }

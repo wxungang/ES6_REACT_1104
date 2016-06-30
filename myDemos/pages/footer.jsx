@@ -26,7 +26,7 @@ export default class PageFooter extends Component {
 
     render(){
         return <div className="personal-page">
-            <Footer listArr={[{text:"tap",link:""},{text:"tap",link:""},{text:"tap",link:""},{text:"tap",link:""}]} type={0}> </Footer>
+            <Footer listArr={[{text:"tap",link:""},{text:"tap",link:""},{text:"tap",link:""},{text:"tap",link:""},{text:"tap",link:""}]} type={0}/>
             <Footer style={{bottom:80}} listArr={[{text:"tap",link:"",iconFont:"icon-xiaomimi1193422easyiconnet"},{text:"tap",link:"",iconFont:"icon-wechat1193418easyiconnet"},{text:"tap",link:"",iconFont:"icon-tmall1193412easyiconnet"},{text:"tap",link:""}]} type="1"> </Footer>
         </div>
     }

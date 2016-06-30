@@ -2,6 +2,7 @@
 组件内部变量  */
 @height-tap:2.5rem;
 @bgColor-tap:#666;
+@line-tap:1.6rem;
 
 @import "mixins";
 
@@ -10,9 +11,18 @@
    line-height: @height-tap;
    background-color: @bgColor-tap;
    text-align: center;
-   position: relative;
-   a{
+   p{
      float: left;
-     width: 50%;
+     width: 25%;
+     &:after{
+       content: "";
+       width: 1px;
+       height: @line-tap;
+       float: right;
+       background-color: #ccc;
+       top: (@height-tap - @line-tap)/2;
+       left: 1px;
+       position: relative;
+     }
    }
 }
