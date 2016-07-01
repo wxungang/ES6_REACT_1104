@@ -21,6 +21,10 @@ li {
   width: 100%;
   text-decoration: none;
 }
+ul,
+li {
+  list-style: none;
+}
 a:-webkit-any-link {
   color: inherit;
 }
@@ -29,6 +33,7 @@ input {
   border: none;
   line-height: 100%;
   padding: 0;
+  margin: 0;
   font: inherit;
   background-color: inherit;
 }

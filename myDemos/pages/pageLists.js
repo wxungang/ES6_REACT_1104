@@ -6,6 +6,7 @@ module.exports = [
     {path: "/header", text: "header", component: require("./header.jsx")},
     {path: "/tap", text: "tap", component: require("./tap")},
     {path: "/list", text: "list", component: require("./list")},
+    {path: "/lists", text: "lists", component: require("./lists")},
     {path: "/button", text: "button", component: require("./button")},
     {path: "/footer", text: "footer", component: require("./footer")}
 ];

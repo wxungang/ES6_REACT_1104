@@ -2,6 +2,7 @@
   margin-top: 3rem;
   width: 100%;
 }
-.personal-list {
+.personal-list,
+.personal-lists {
   margin: 0.5rem 0;
 }

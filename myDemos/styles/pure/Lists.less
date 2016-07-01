@@ -1,16 +1,25 @@
 /*
 组件内部变量  */
 @height-lists:1.5rem;
-@bgColor-lists:#666;
+@bgColor-lists:#fff;
+@title-lists:2rem;
+@padding-lists:0 6%;
 
 @import "mixins";
 
 .personal-lists{
-    width: 100%;
+    display: block;
+    padding: @padding-lists;
+    background-color: @bgColor-lists;
     line-height: @height-lists;
-
     li{
-      height: @height-lists;
       width: 100%;
+      span{
+        margin-right: 0.4rem;
+        display: inline-block;
+      }
     }
+   .p-lists-title{
+      line-height: @title-lists;
+   }
 }
