@@ -26,6 +26,7 @@ export default class Lists extends Component {
             "personal-lists",
             this.props.className
         );
+        //lists 组件代码
         let _listsArr = this.props.listArr;
         console.log(classNames);
         return (
@@ -34,7 +35,9 @@ export default class Lists extends Component {
                     const _className = index ? "p-lists-item" : "p-lists-item p-lists-title";
                     if (item instanceof Array) {
                         return <li key={index} className={_className}>
-                            {item.className ? item.text.map((_item, _index)=><span className={item.className[_index]}>{_item}</span>) : item.text.map((_item, _index)=><span>{_item}</span>)}
+                            {item.className ? item.text.map((_item, _index)=><span
+                                className={item.className[_index]}>{_item}</span>) : item.text.map((_item, _index)=>
+                                <span>{_item}</span>)}
                         </li>
                     } else {
                         return <li key={index} className={_className}>

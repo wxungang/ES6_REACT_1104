@@ -20,7 +20,7 @@ export default class PageLists extends Component{
     static propTypes = {
 
     };
-
+    // 组件调用代码
     render(){
        return <div className="personal-page">
             <Lists listArr={[{text:"lists title"},{text:["key:","value"]}]} />
