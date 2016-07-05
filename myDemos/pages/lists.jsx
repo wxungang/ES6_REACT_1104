@@ -24,7 +24,7 @@ export default class PageLists extends Component{
     render(){
        return <div className="personal-page">
             <Lists listArr={[{text:"lists title"},{text:["key:","value"]}]} />
-           <Lists listArr={[{text:["lists title"]},{text:["key:","value"],className:["key","value"]},{text:["key:","value"]}]} />
+            <Lists listArr={[{text:["lists title"]},{text:["key:","value","more value"],className:["key","value","more"]},{text:["key:","value"]}]} />
        </div>
     }
 }
