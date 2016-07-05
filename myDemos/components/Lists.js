@@ -20,6 +20,9 @@ export default class Lists extends Component {
     static propTypes = {
         listsArr: PropTypes.array
     };
+    componentDidMount(){
+        consle.log();
+    }
 
     render() {
         const classNames = setClassName(
