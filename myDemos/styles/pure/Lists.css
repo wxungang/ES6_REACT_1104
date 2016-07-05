@@ -48,6 +48,7 @@ input {
 }
 .personal-lists {
   display: block;
+  position: relative;
   padding: 0 6%;
   background-color: #fff;
   line-height: 1.5rem;
@@ -61,4 +62,10 @@ input {
 }
 .personal-lists .p-lists-title {
   line-height: 2rem;
+}
+.personal-lists .iconfont {
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }

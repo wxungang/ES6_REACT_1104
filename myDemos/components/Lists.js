@@ -21,7 +21,7 @@ export default class Lists extends Component {
         listsArr: PropTypes.array
     };
     componentDidMount(){
-        consle.log();
+        console.log("componentDidMount");
     }
 
     render() {
@@ -29,12 +29,18 @@ export default class Lists extends Component {
             "personal-lists",
             this.props.className
         );
+        const iconClass=setClassName(
+            "iconfont",
+            "right",
+            this.props.iconFont
+        );
         //lists 组件代码
         let _listsArr = this.props.listArr;
         console.log(classNames);
         //@formatter:off
         return (
-            <div className={classNames}>{
+            <div className={classNames}>
+                <span className={iconClass}></span>{
                 _listsArr.map((item, index)=> {
                     const _className = index ? "p-lists-item" : "p-lists-item p-lists-title";
                     if (item.text instanceof Array) {
