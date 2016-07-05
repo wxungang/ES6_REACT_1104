@@ -29,15 +29,14 @@ export default class Lists extends Component {
         //lists 组件代码
         let _listsArr = this.props.listArr;
         console.log(classNames);
+        //@formatter:off
         return (
             <div className={classNames}>{
                 _listsArr.map((item, index)=> {
                     const _className = index ? "p-lists-item" : "p-lists-item p-lists-title";
-                    if (item instanceof Array) {
+                    if (item.text instanceof Array) {
                         return <li key={index} className={_className}>
-                            {item.className ? item.text.map((_item, _index)=><span
-                                className={item.className[_index]}>{_item}</span>) : item.text.map((_item, _index)=>
-                                <span>{_item}</span>)}
+                            {item.className ? item.text.map((_item, _index)=><span key={_index} className={item.className[_index]}>{_item}</span>) : item.text.map((_item, _index)=><span key={_index}>{_item}</span>)}
                         </li>
                     } else {
                         return <li key={index} className={_className}>
