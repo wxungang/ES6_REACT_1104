@@ -69,3 +69,11 @@ input {
   top: 50%;
   transform: translate(-50%, -50%);
 }
+.personal-lists img {
+  width: 36%;
+  padding: 0.5rem 0;
+}
+.personal-lists .p-lists-desc {
+  width: 60%;
+  float: right;
+}

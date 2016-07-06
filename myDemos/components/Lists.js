@@ -36,24 +36,33 @@ export default class Lists extends Component {
         );
         //lists 组件代码
         let _listsArr = this.props.listArr;
+        const _listDom=_listsArr.map((item, index)=> {
+            const _className = index ? "p-lists-item" : "p-lists-item p-lists-title";
+            if (item.text instanceof Array) {
+                return <li key={index} className={_className}>
+                    {item.className ? item.text.map((_item, _index)=><span key={_index} className={item.className[_index]}>{_item}</span>) : item.text.map((_item, _index)=><span key={_index}>{_item}</span>)}
+                </li>
+            } else {
+                return <li key={index} className={_className}>
+                    <span className={item.className}>{item.text}</span>
+                </li>
+            }
+        });
         console.log(classNames);
         //@formatter:off
         return (
-            <div className={classNames}>
-                <span className={iconClass}></span>{
-                _listsArr.map((item, index)=> {
-                    const _className = index ? "p-lists-item" : "p-lists-item p-lists-title";
-                    if (item.text instanceof Array) {
-                        return <li key={index} className={_className}>
-                            {item.className ? item.text.map((_item, _index)=><span key={_index} className={item.className[_index]}>{_item}</span>) : item.text.map((_item, _index)=><span key={_index}>{_item}</span>)}
-                        </li>
-                    } else {
-                        return <li key={index} className={_className}>
-                            <span className={item.className}>{item.text}</span>
-                        </li>
+                ((imgUrl)=>{
+                    if(imgUrl){
+                        return <div className={classNames}>
+                                    <img src={imgUrl}/>
+                                   <div className="p-lists-desc">{_listDom}</div>
+                            </div>
+                    }else {
+                        return <div className={classNames}>
+                                   <span className={iconClass}></span>{_listDom}
+                        </div>
                     }
-                })
-            }</div>
+                })(this.props.imgUrl)
         );
     }
 }
