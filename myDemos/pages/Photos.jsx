@@ -18,6 +18,7 @@ export default class PagePhotos extends Component {
     static propTypes = {};
     // 组件调用代码
     render() {
+        console.log(window.screen.width);
         let listArr = [{
             desc: [{text: "photo wall"}, {
                 text: ["$100", "已售1104件"]
