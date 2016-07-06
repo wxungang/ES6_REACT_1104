@@ -1,0 +1,41 @@
+/*
+组件内部变量  */
+@height-photo:1.5rem;
+@bgColor-photo:#fff;
+@fSize-photo:0.8rem;
+@padding-photo:0.2rem 2%;
+
+@import "mixins";
+
+.personal-photo {
+  background-color: @bgColor-photo;
+  text-align: center;
+  font-size: 0.8rem;
+  width: 25%;
+  box-sizing: border-box;
+  padding: @padding-photo;
+  display: inline-block;
+  float: left;
+  position: relative;
+  //&:after {
+  //  content: "";
+  //  width: 1px;
+  //  height: 114px;
+  //  background-color: #ccc;
+  //  top: 0;
+  //  left: 0;
+  //  position: absolute;
+  //}
+  p{
+    text-overflow: ellipsis;
+    overflow-x: hidden;
+    white-space: nowrap;
+    &.p-photo-desc{
+      font-size: 0.6rem;
+      white-space:inherit;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+  }
+}

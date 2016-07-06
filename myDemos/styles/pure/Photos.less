@@ -1,0 +1,31 @@
+/*
+组件内部变量  */
+@height-photos:1.5rem;
+@bgColor-photos:#fff;
+@title-photos:2rem;
+@padding-photos:0 6%;
+
+@import "mixins";
+
+.personal-photos{
+   overflow: hidden;
+   width: 100%;
+   .p-photo{
+     text-align: center;
+     font-size: 0.8rem;
+      width: 25%;
+     display: inline-block;
+     float:left;
+     position: relative;
+     //&:after{
+     //  content: "";
+     //  width: 1px;
+     //  height: 114px;
+     //  background-color: #ccc;
+     //  top: 0;
+     //  left: 0;
+     //  position: absolute;
+     //}
+   }
+
+}
