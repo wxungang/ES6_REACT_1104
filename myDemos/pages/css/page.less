@@ -4,9 +4,29 @@
    margin-top: 3rem;
    width: 100%;
 }
-
+//.personal-list,.personal-lists 样式覆盖
 .personal-list,.personal-lists {
    margin: 0.5rem 0;
    max-height: 7rem;
    overflow: hidden;
+}
+//personal-photos样式覆盖
+.personal-photos{
+   margin-bottom: 1rem;
+}
+.personal-page .p-photos-margin .personal-photo{
+   width: 23%;
+   margin: 0 1%;
+}
+.personal-page .p-photos-border .personal-photo{
+   height: 5rem;
+   &:after{
+      content: "";
+      width: 1px;
+      height: 5rem;
+      background-color: #ccc;
+      top: 0;
+      left: 0;
+      position: absolute;
+   }
 }

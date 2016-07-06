@@ -54,6 +54,7 @@ input {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 99;
 }
 .personal-header p {
   width: 70%;

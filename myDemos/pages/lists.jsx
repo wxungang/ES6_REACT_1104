@@ -27,7 +27,7 @@ export default class PageLists extends Component{
             <Lists listArr={[{text:"lists title"},{text:["key:","value"]}]} iconFont="icon-unie6a3"/>
             <Lists iconFont="icon-unie6a3" listArr={[{text:["lists title"]},{text:["key:","value","more value"],className:["key","value","more"]},{text:["key:","value"]}]} />
             <Lists listArr={[{text:"lists title"},{text:["this is a list with picture and ","text"]}]} imgUrl={require("./img/QCode.jpg")}/>
-            <Lists listArr={[{text:"lists title"},{text:["this is a list with picture and ","text"]}]} imgUrl={require("./img/lady.jpg")}/>
+            <Lists listArr={[{text:"lists title"},{text:["this is a list with picture and ","text"]}]} imgUrl={require("./img/banner.jpg")}/>
        </div>
     }
 }

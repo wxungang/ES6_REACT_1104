@@ -8,3 +8,22 @@
   max-height: 7rem;
   overflow: hidden;
 }
+.personal-photos {
+  margin-bottom: 1rem;
+}
+.personal-page .p-photos-margin .personal-photo {
+  width: 23%;
+  margin: 0 1%;
+}
+.personal-page .p-photos-border .personal-photo {
+  height: 5rem;
+}
+.personal-page .p-photos-border .personal-photo:after {
+  content: "";
+  width: 1px;
+  height: 5rem;
+  background-color: #ccc;
+  top: 0;
+  left: 0;
+  position: absolute;
+}

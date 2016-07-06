@@ -8,6 +8,7 @@ module.exports = [
     {path: "/list", text: "list", component: require("./list")},
     {path: "/lists", text: "lists", component: require("./lists")},
     {path: "/photo", text: "photo", component: require("./photo")},
+    {path: "/photos", text: "photos", component: require("./photos")},
     {path: "/button", text: "button", component: require("./button")},
     {path: "/footer", text: "footer", component: require("./footer")}
 ];
