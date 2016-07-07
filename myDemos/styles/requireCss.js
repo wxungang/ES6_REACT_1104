@@ -5,8 +5,8 @@
 "use strict";
 let pre="pure";
 
-export function requireCss(pack) {
-  require(`./${pre}/${pack}.less`);
+export function requireCss(pack,folder) {
+  require(`./${folder||pre}/${pack}.less`);
 }
 
 export function setTheme (theme) {

@@ -1,51 +1,6 @@
 /*
 组件内部变量  */
 /* 页面的基本样式常量 */
-html,
-body,
-p {
-  padding: 0;
-  margin: 0;
-}
-html,
-body {
-  font-size: 20px;
-}
-body {
-  background-color: #eee;
-}
-body img {
-  width: 100%;
-}
-a,
-ul,
-li {
-  width: 100%;
-  text-decoration: none;
-}
-ul,
-li {
-  list-style: none;
-}
-a:-webkit-any-link {
-  color: inherit;
-}
-input {
-  outline: none;
-  border: none;
-  line-height: 100%;
-  padding: 0;
-  margin: 0;
-  font: inherit;
-  background-color: inherit;
-}
-/*基本常用类*/
-.right {
-  float: right;
-}
-.left {
-  float: left;
-}
 .personal-lists {
   display: block;
   position: relative;
