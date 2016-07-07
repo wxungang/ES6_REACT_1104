@@ -29,8 +29,6 @@ export default class Photos extends Component {
     static propTypes = {
         myProp: PropTypes.string
     };
-
-
     render() {
         //临时变量和方法
         const classNames = setClassName(
@@ -77,7 +75,6 @@ export default class Photos extends Component {
             })}
         </div>
     }
-
 }
 module.exports = Photos;
 
